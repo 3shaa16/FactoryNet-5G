@@ -1,0 +1,945 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1020;
+    color: #f3f4f6;
+}
+
+.app-shell {
+    padding: 24px;
+}
+
+.app-header {
+    margin-bottom: 24px;
+}
+
+.app-title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.app-subtitle {
+    margin-top: 8px;
+    color: #b8c0d9;
+    font-size: 16px;
+}
+
+.control-panel {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.control-group {
+    background: #151b2f;
+    padding: 16px;
+    border-radius: 16px;
+    min-width: 240px;
+}
+
+.control-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.run-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.run-button:hover {
+    background: #1d4ed8;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.metric-card {
+    background: #151b2f;
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.metric-card-title {
+    font-size: 14px;
+    color: #b8c0d9;
+    margin-bottom: 10px;
+}
+
+.metric-card-value {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.chart-card {
+    background: #151b2f;
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.chart-card-wide {
+    grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card-wide {
+        grid-column: span 1;
+    }
+}
+
+/* Dropdown container */
+.Select-control {
+    background-color: #151b2f !important;
+    border-radius: 10px !important;
+    border: 1px solid #2a3355 !important;
+    color: white !important;
+}
+
+/* Selected value text */
+.Select-value-label {
+    color: white !important;
+}
+
+/* Dropdown menu */
+.Select-menu-outer {
+    background-color: #151b2f !important;
+    color: white !important;
+    border: 1px solid #2a3355 !important;
+}
+
+/* Dropdown options */
+.Select-option {
+    background-color: #151b2f !important;
+    color: white !important;
+}
+
+/* Hover effect */
+.Select-option.is-focused {
+    background-color: #2563eb !important;
+    color: white !important;
+}
+
+/* Selected option */
+.Select-option.is-selected {
+    background-color: #1d4ed8 !important;
+    color: white !important;
+}
+
+.factory-section {
+    margin-top: 40px;
+    background: #151b2f;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+.factory-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.congestion-banner {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.lane {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lane-label {
+    width: 80px;
+    font-weight: 600;
+}
+
+.lane-track {
+    display: flex;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.packet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: movePacket 1s linear infinite;
+}
+
+@keyframes movePacket {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+
+.factory-section {
+    margin-top: 40px;
+    background: radial-gradient(circle at top left, #1e293b, #0f172a 55%);
+    padding: 24px;
+    border-radius: 22px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.section-title {
+    margin: 0 0 18px 0;
+    font-size: 26px;
+}
+
+.factory-empty {
+    color: #cbd5e1;
+    padding: 28px;
+    border: 1px dashed #475569;
+    border-radius: 16px;
+}
+
+.factory-explainer {
+    background: rgba(15, 23, 42, 0.75);
+    border: 1px solid #334155;
+    padding: 18px 20px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.factory-explainer h3 {
+    margin: 0 0 8px 0;
+}
+
+.factory-explainer p {
+    margin: 0;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.factory-panels-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.factory-panel {
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid #334155;
+    border-radius: 22px;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.rr-panel {
+    box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.15);
+}
+
+.qos-panel {
+    box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.25);
+}
+
+.factory-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.factory-panel-title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.factory-status {
+    font-size: 13px;
+    font-weight: 800;
+    padding: 8px 12px;
+    border-radius: 999px;
+}
+
+.status-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    animation: pulseWarning 0.9s infinite alternate;
+}
+
+.status-normal {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.factory-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.factory-stat {
+    background: #111827;
+    border: 1px solid #263449;
+    border-radius: 14px;
+    padding: 10px;
+}
+
+.factory-stat span {
+    display: block;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.factory-stat strong {
+    font-size: 26px;
+}
+
+.factory-flow {
+    display: grid;
+    grid-template-columns: 1fr 120px 140px 90px;
+    gap: 20px;
+    align-items: center;
+}
+
+.factory-lanes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.factory-lane {
+    display: grid;
+    grid-template-columns: 90px 1fr 76px 72px;
+    gap: 10px;
+    align-items: center;
+    padding: 14px;
+    border-radius: 16px;
+    background: #0b1220;
+    border: 1px solid #263449;
+    position: relative;
+}
+
+.lane-active {
+    border-color: #facc15;
+    box-shadow: 0 0 18px rgba(250, 204, 21, 0.25);
+}
+
+.lane-danger {
+    background: linear-gradient(90deg, rgba(127, 29, 29, 0.45), #0b1220);
+}
+
+.lane-warning {
+    background: linear-gradient(90deg, rgba(120, 53, 15, 0.35), #0b1220);
+}
+
+.lane-source {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.source-icon {
+    font-size: 24px;
+}
+
+.source-name {
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.conveyor-zone {
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #020617;
+    border: 1px solid #1e293b;
+}
+
+.conveyor-belt {
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        90deg,
+        rgba(148, 163, 184, 0.18) 0,
+        rgba(148, 163, 184, 0.18) 12px,
+        transparent 12px,
+        transparent 24px
+    );
+    animation: beltMove 0.7s linear infinite;
+    opacity: 0.7;
+}
+
+.packet-stream {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.moving-packet {
+    position: absolute;
+    left: -40px;
+    top: 12px;
+
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: packetMove 2.5s linear infinite;
+
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+}
+
+.packet-urllc {
+    animation-duration: 1.2s;
+}
+
+.packet-embb {
+    width: 22px;
+    height: 22px;
+    top: 16px;
+    animation-duration: 2.2s;
+}
+
+.packet-mmtc {
+    width: 14px;
+    height: 14px;
+    top: 16px;
+    animation-duration: 1.6s;
+}
+
+.packet-non-gbr {
+    animation-duration: 3s;
+    opacity: 0.75;
+    width: 16px;
+    height: 16px;
+}
+
+.queue-box,
+.allocation-box {
+    text-align: center;
+    background: #111827;
+    border: 1px solid #263449;
+    border-radius: 12px;
+    padding: 8px 6px;
+}
+
+.queue-title,
+.allocation-label {
+    color: #94a3b8;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.queue-count {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.allocation-value {
+    font-size: 24px;
+    font-weight: 900;
+    color: #facc15;
+}
+
+.scheduler-station {
+    height: 290px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #1e293b, #020617);
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+}
+
+.scheduler-station::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    width: 28px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #facc15);
+    animation: resourceBeam 0.8s infinite alternate;
+}
+
+.scheduler-station::after {
+    content: "";
+    position: absolute;
+    right: -28px;
+    width: 28px;
+    height: 4px;
+    background: linear-gradient(90deg, #facc15, transparent);
+    animation: resourceBeam 0.8s infinite alternate;
+}
+
+.robot-arm {
+    font-size: 70px;
+    animation: robotPick 1.1s ease-in-out infinite alternate;
+}
+
+.robot-label {
+    font-size: 15px;
+    font-weight: 900;
+}
+
+.robot-mode {
+    font-size: 12px;
+    color: #cbd5e1;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.machine-station {
+    height: 220px;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #172554, #020617);
+    border: 1px solid #3b82f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.machine-icon {
+    font-size: 65px;
+    animation: spinGear 2s linear infinite;
+}
+
+.machine-title {
+    font-weight: 900;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.machine-subtitle {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin-top: 4px;
+}
+
+.output-zone {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.output-good,
+.output-drop {
+    border-radius: 16px;
+    padding: 18px 10px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.output-good {
+    background: rgba(34, 197, 94, 0.15);
+    border: 1px solid rgba(34, 197, 94, 0.4);
+    color: #4ade80;
+}
+
+.output-drop {
+    background: rgba(239, 68, 68, 0.13);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #f87171;
+}
+
+@keyframes packetMove {
+    0% {
+        transform: translateX(0) scale(0.7);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(520px) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes beltMove {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 24px 0;
+    }
+}
+
+@keyframes robotPick {
+    from {
+        transform: rotate(-8deg) translateY(0);
+    }
+    to {
+        transform: rotate(10deg) translateY(-8px);
+    }
+}
+
+@keyframes spinGear {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseWarning {
+    from {
+        box-shadow: 0 0 0 rgba(239, 68, 68, 0.2);
+    }
+    to {
+        box-shadow: 0 0 18px rgba(239, 68, 68, 0.75);
+    }
+}
+
+@keyframes resourceBeam {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+    .factory-panels-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .factory-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .factory-lane {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .queue-box,
+    .allocation-box {
+        display: none;
+    }
+}
+
+.output-drop {
+    animation: dropPulse 1s infinite alternate;
+}
+
+@keyframes dropPulse {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+.lane-active {
+    border-color: #facc15;
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.6);
+    transform: scale(1.02);
+}
+
+/* BIG FACTORY SIMULATION OVERRIDE */
+.factory-section {
+    padding: 42px !important;
+}
+
+.factory-panels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+}
+
+.factory-panel {
+    padding: 34px !important;
+    border-radius: 28px !important;
+}
+
+.factory-panel-title {
+    font-size: 32px !important;
+}
+
+.factory-status {
+    font-size: 18px !important;
+    padding: 12px 18px !important;
+}
+
+.factory-stats-row {
+    gap: 18px !important;
+    margin-bottom: 28px !important;
+}
+
+.factory-stat {
+    padding: 18px !important;
+}
+
+.factory-stat span {
+    font-size: 16px !important;
+}
+
+.factory-stat strong {
+    font-size: 34px !important;
+}
+
+.factory-flow {
+    grid-template-columns: 1fr 170px 200px 140px !important;
+    gap: 28px !important;
+}
+
+.factory-lanes {
+    gap: 20px !important;
+}
+
+.factory-lane {
+    grid-template-columns: 130px 1fr 100px 100px !important;
+    padding: 20px !important;
+    min-height: 92px !important;
+    border-radius: 24px !important;
+}
+
+.source-icon {
+    font-size: 34px !important;
+}
+
+.source-name {
+    font-size: 18px !important;
+}
+
+.conveyor-zone {
+    height: 70px !important;
+}
+
+.moving-packet {
+    font-size: 32px !important;
+    top: 18px !important;
+}
+
+.queue-box,
+.allocation-box {
+    padding: 14px 10px !important;
+    border-radius: 18px !important;
+}
+
+.queue-title,
+.allocation-label {
+    font-size: 14px !important;
+}
+
+.queue-count,
+.allocation-value {
+    font-size: 34px !important;
+}
+
+.scheduler-station {
+    height: 420px !important;
+    border-radius: 28px !important;
+}
+
+.robot-arm {
+    font-size: 92px !important;
+}
+
+.robot-label {
+    font-size: 20px !important;
+}
+
+.robot-mode {
+    font-size: 16px !important;
+}
+
+.machine-station {
+    height: 330px !important;
+    border-radius: 30px !important;
+}
+
+.machine-icon {
+    font-size: 90px !important;
+}
+
+.machine-title {
+    font-size: 22px !important;
+}
+
+.machine-subtitle {
+    font-size: 16px !important;
+}
+
+.output-good,
+.output-drop {
+    font-size: 20px !important;
+    padding: 28px 16px !important;
+    border-radius: 22px !important;
+}
+
+/* Reduce overall scaling slightly */
+.factory-panel {
+    padding: 22px !important;
+}
+
+.factory-lane {
+    min-height: 70px !important;
+}
+
+.scheduler-station {
+    height: 300px !important;
+}
+
+.machine-station {
+    height: 280px !important;
+}
+
+.moving-packet {
+    font-size: 26px !important;
+}
+
+/* 🔥 Make explainer text BIGGER */
+.factory-explainer h3 {
+    font-size: 30px !important;
+    font-weight: 800;
+}
+
+.factory-explainer p {
+    font-size: 18px !important;
+    line-height: 1.7;
+    color: #e2e8f0;
+}
+
+/* Slightly reduce overall size */
+.factory-panel {
+    padding: 22px !important;
+}
+
+.factory-lane {
+    min-height: 70px !important;
+    padding: 16px !important;
+}
+
+.scheduler-station {
+    height: 320px !important;
+}
+
+.machine-station {
+    height: 250px !important;
+}
+
+.moving-packet {
+    font-size: 24px !important;
+}
+
+/* 🔥 Make heading MUCH bigger */
+.factory-explainer h3 {
+    font-size: 34px !important;
+    font-weight: 900;
+}
+
+/* 🔥 Make description clearly readable */
+.factory-explainer p {
+    font-size: 20px !important;
+    line-height: 1.8;
+    color: #e2e8f0;
+}
+/* 🔧 Slightly reduce overall size */
+.factory-panel {
+    padding: 20px !important;
+}
+
+.factory-lane {
+    min-height: 64px !important;
+    padding: 14px !important;
+}
+
+.conveyor-zone {
+    height: 56px !important;
+}
+
+.scheduler-station {
+    height: 300px !important;
+}
+
+.machine-station {
+    height: 230px !important;
+}
+
+/* 🔥 Keep packets visible but not too big */
+.moving-packet {
+    font-size: 22px !important;
+}
+
+/* 🔥 Make IMPORTANT TEXT bigger */
+.source-name {
+    font-size: 16px !important;
+    font-weight: 800;
+}
+
+.queue-title,
+.allocation-label {
+    font-size: 13px !important;
+}
+
+.queue-count,
+.allocation-value {
+    font-size: 28px !important;
+    font-weight: 900;
+}
+
+/* 🔥 Make section titles bigger */
+.factory-panel-title {
+    font-size: 26px !important;
+}
+
+/* 🔥 Improve top stat cards */
+.factory-stat strong {
+    font-size: 28px !important;
+}
+
+.factory-stat span {
+    font-size: 14px !important;
+}
+
+.status-started {
+    background: rgba(250, 204, 21, 0.2) !important;
+    color: #fde047 !important;
+    animation: congestionFlash 0.35s infinite alternate !important;
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.8) !important;
+}
+
+@keyframes congestionFlash {
+    from {
+        transform: scale(1);
+        box-shadow: 0 0 8px rgba(250, 204, 21, 0.4);
+    }
+    to {
+        transform: scale(1.08);
+        box-shadow: 0 0 30px rgba(250, 204, 21, 1);
+    }
+}
